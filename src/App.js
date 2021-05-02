@@ -100,7 +100,7 @@ class App extends Component{
         this.setState({imageUrl: this.state.input});
         // app.models
         // .predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
-        fetch('http://localhost:3000/imageUrl',{
+        fetch('https://obscure-oasis-20536.herokuapp.com/imageUrl',{
             method: 'post',
             headers: {'Content-Type' : 'application/json'},
             body: JSON.stringify({
@@ -110,7 +110,7 @@ class App extends Component{
         .then(response => response.json())
         .then(response =>{
             if(response){
-                fetch('http://localhost:3000/image',{
+                fetch('https://obscure-oasis-20536.herokuapp.com/image',{
                     method: 'put',
                     headers: {'Content-Type' : 'application/json'},
                     body: JSON.stringify({
