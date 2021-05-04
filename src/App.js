@@ -22,7 +22,7 @@ const particlesOptions = {
         "shape": {
             "type": "circle",
             "polygon": {
-                "nb_sides": 3
+                "nb_sides": 5
             },
             "image": {
                 "src": "img/github.svg",
@@ -36,6 +36,10 @@ const particlesOptions = {
             "color": "#5b5b5b",
             "opacity": 0.4,
             "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
         }
     }
 }
