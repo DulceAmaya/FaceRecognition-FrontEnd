@@ -6,12 +6,33 @@ const FaceRecognition = ({ imageUrl, box }) =>{
         <div className='center-flex'>
             <div className='image-container'>
                 <img id='inputImage' src={imageUrl} alt='' width='500px' height='auto'/>
-                <div className='bounding-box'
-                    style={{top: box.topRow, right: box.rightCol, bottom: box.bottomRow, left: box.leftCol}}>
-                </div>
+                {drawBoxes(box)}
             </div>
         </div>
     )
 }
+
+const drawBoxes = (box) =>{
+    let boxes = [];
+    for(let i = 0; i < box.length; i++){
+        boxes.push(
+            <div
+                key = {i} 
+                className='bounding-box'
+                style={
+                    {
+                        top: box[i].topRow, 
+                        right: box[i].rightCol, 
+                        bottom: box[i].bottomRow, 
+                        left: box[i].leftCol
+                    }
+                }
+            >
+            </div>
+        )
+    }
+    return <div>{boxes}</div>
+}
+
 
 export default FaceRecognition;
